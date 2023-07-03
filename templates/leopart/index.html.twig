@@ -1,0 +1,232 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Leopart
+{% endblock %}
+
+
+{% block body %}
+	<style>
+	
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+
+		}
+		.container {
+			position: relative;
+			min-height: 100vh;
+
+		}
+		.container .image-container {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 15px;
+			justify-content: center;
+			padding: 10px;
+		}
+		.container .image-container .image {
+			height: 400px;
+			width: 550px;
+			border-radius: 5px;
+
+			overflow: hidden;
+			cursor: pointer;
+		}
+		.container .image-container .image img {
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			transition: 0.2s linear;
+		}
+		.container .image-container .image:hover img {
+			transform: scale(1.1);
+		}
+		.popup-image {
+			position: fixed;
+			top: 0;
+			left: 0;
+			background: rgba(0, 0, 0, 0.9);
+			height: 100%;
+			width: 100%;
+			z-index: 100;
+			display: none;
+		}
+		.popup-image span {
+			position: absolute;
+			top: 0;
+			right: 10px;
+			font-size: 60px;
+			font-weight: bolder;
+			color: #fff;
+			cursor: pointer;
+			z-index: 100;
+		}
+		.popup-image img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			border: 5px solid #fff;
+			border-radius: 5px;
+			width: 750px;
+			object-fit: cover;
+
+		}
+		.backgroundLeopart {
+			background-image: url('/img/fond_leopard.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-attachment: fixed;
+			margin: 0;
+
+		}
+		.glasmorphisme {
+			backdrop-filter: blur(11px) saturate(14%);
+			-webkit-backdrop-filter: blur(11px) saturate(14%);
+			background-color: rgba(255, 238, 192, 0.5);
+			border-radius: 12px;
+			border: 1px solid rgba(209, 213, 219, 0.3);
+		}
+		.contener {
+			margin-left: 10%;
+			margin-right: 10%;
+			padding: 2rem;
+			margin-top: 5%;
+		}
+		.imageJoffrine img {
+			border-radius: 10px 10px 10px 10px;
+
+			margin-top: 1rem;
+
+		}
+		.textBox {
+			background-color: rgba(255, 238, 192, 0.5);
+			border-radius: 10px 10px 10px 10px;
+
+			padding: 1rem;
+			margin-top: 1rem;
+			font-size: 1.2rem;
+		}
+
+		/*FOOTER */
+		.footer {
+			background: white;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 1rem;
+		}
+		.img_footer {
+			width: 100px;
+			height: 100px;
+		}
+
+		.Adress {
+			font-weight: bold;
+			font-size: large;
+		}
+		.btn {
+			border-radius: 50%;
+			height: 100px;
+			width: 100px;
+			margin: 0.3rem;
+
+		}
+
+		@media (max-width: 750px){
+			p{
+				color: blue;
+			}
+			.navbar{
+				display: none;
+			}
+		}
+	</style>
+
+	<div class="popup-image">
+		<span>&times;</span>
+		<img src="/img/busteface.png" alt="busteface">
+	</div>
+
+	<div class="navbar">
+	<ul>
+	<li>about</li>
+	<li>galerie</li>
+	<li>contact</li>
+	<li>truc</li>
+	</ul>
+	</div>
+	<div class="backgroundLeopart">
+		<div>
+			<div class="glasmorphisme contener">
+				<h2>A propos</h2>
+				<div class="">
+					<div class="imageJoffrine">
+						<img src="/img/photoJoffrine.jpeg" alt="photo joffrine">
+					</div>
+					<div class="textBox">
+						<p>L’inconscient au service de la création Moments de vie, souvenirs, envies, inspirations, objectifs… La rêverie dans toute sa splendeur, Joffrine dessine depuis sa naissance. Autodidacte et passionnée, la création a toujours fait partie de son quotidien. Activités manuelles, bricolages, dessins, peintures, croquis, créations graphiques (assistées par ordinateur), elle explore le monde selon ses désirs et les retranscrit à sa manière. Certains y voient une sorte de pointillisme, d’autres un style graphique à part entière. Inspirée par le Pop Art d’Andy Warhol, les effets d’optiques de Dali et également les personnages de Keith Haring. Elle aime tenter de nouvelles choses et dissimuler des messages qui peuvent apparaître après des heures d’observations, tel que sa signature présente dans toutes ses toiles qu’elle réalise au POSCA.</p>
+					</p>
+				</div>
+			</div>
+
+
+		</div>
+		<div class="glasmorphisme contener">
+			<h2>Prix</h2>
+		</div>
+		<div class="glasmorphisme contener">
+			<h2>Galerie</h2>
+			<div class="container">
+				<div class="image-container">
+					<div class="image"><img class="" src="/img/busteface.png" alt="busteface"></div>
+					<div class="image"><img src="/img/coeurs.jpg" alt="coeur"></div>
+					<div class="image"><img src="/img/leJaguar.jpg" alt="le jaguar"></div>
+					<div class="image"><img src="/img/lion.png" alt="lion"></div>
+					<div class="image"><img src="/img/pachwork.jpg" alt="pachwork"></div>
+					<div class="image"><img src="/img/triptique.jpg" alt="triptique"></div>
+				</div>
+
+
+			</div>
+
+
+		</div>
+		<div class="glasmorphisme contener">
+			<h2>contact</h2>
+			{{form(formulaire)}}
+			</div>
+		</div>
+	</div>
+	<footer>
+	<div class="footer">
+		<img class="img_footer" src="/img/Logo Joffrine VF Couleur.jpg" alt="">
+		<p class="Adress">Adresse:120 Route de Paris<br>76240 LE MENESNIL ESNARD<br></p>
+		<div class="liens">
+			<button class="btn"><i class="fa-brands fa-facebook"></i></button>
+			<button class="btn">Instagram</button>
+			<button class="btn">twitter</button>
+			<button class="btn">Linked</button>
+		</div>
+	</div>
+
+	<script>
+		(document).querySelectorAll('.image-container img').forEach(image => {
+
+		image.onclick = () => {
+
+		document.querySelector('.popup-image').style.display = 'block';
+		document.querySelector('.popup-image img').src = image.getAttribute('src');
+
+		}
+		});
+
+		document.querySelector('.popup-image span').onclick = () => {
+		document.querySelector('.popup-image').style.display = 'none';
+
+		}
+	</script>
+
+{% endblock %}
+

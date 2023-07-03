@@ -1,0 +1,369 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ZebreController!
+{% endblock %}
+
+{% block body %}
+<style>
+		.backgroundZebre {
+			background-image: url('/img/fond_zébre.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		body {
+			font-family: palatino, sans-serif;
+		}
+		/* header */
+		.header {
+			position: relative;
+			padding: 1rem;
+			display: flex;
+			justify-content: space-between;
+			background-color: black;
+		}
+		.navbar {
+			color: white;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		nav #burger {
+			width: 48px;
+		}
+
+		nav ul {
+			width: 70%;
+			display: none;
+		}
+
+		nav ul li {
+			list-style: none;
+			text-transform: uppercase;
+			font-size: 5rem;
+			cursor: pointer;
+		}
+
+		nav ul li:last-child {
+			background-color: red;
+			padding: 0.5em 1rem;
+			border-radius: 50px;
+			width: fit-content;
+		}
+
+		.navMobile {
+			position: absolute;
+			right: 0;
+			top: 0;
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+			width: 50vw;
+			background: black;
+			padding: 1rem;
+			border-radius: 10px;
+			align-items: end;
+		}
+
+
+		.img_logo {
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+		}
+
+
+		.glassmorphisme {
+			backdrop-filter: blur(15px) saturate(14%);
+			-webkit-backdrop-filter: blur(15px) saturate(14%);
+			background-color: rgba(255, 255, 255, 0.69);
+			border-radius: 12px;
+			border: 1px solid rgba(255, 255, 255, 0.125);
+		}
+
+
+		.containerCard {
+			margin-left: 5%;
+			margin-right: 5%;
+			padding: 5rem;
+			margin-top: 5%;
+			border-radius: 20px;
+
+		}
+
+		.containerTitle {
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 2rem;
+			padding: 0.5rem;
+			width: 30%;
+			background-color: white;
+			text-align: center;
+		}
+		.containerTitle h2 {
+			font-size: 60px;
+		}
+		.containerArticle {
+			marging: 2rem;
+			padding: 5rem;
+
+		}
+		.img {
+			border: 15px solid black;
+			border-radius: 8px;
+			width: 350px;
+			height: 400px;
+			margin-left: auto;
+			margin-right: auto;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 3rem;
+		}
+
+		/*PRIX*/
+		.pPrix {
+			text-align: center;
+			font-weight: bold;
+			font-size: large;
+		}
+
+		.imgPrix2 {
+			border: 20px solid black;
+			border-radius: 8px;
+			width: 450px;
+			height: 250px;
+			margin-left: auto;
+			margin-right: auto;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 3rem;
+
+		}
+
+		/*PROJETS*/
+		.containerCardProjet {
+			align-items: center;
+			justify-content: center;
+			margin: 3rem;
+
+		}
+		.imgProjet {
+			border-radius: 20px;
+			width: 400px;
+			height: 500px;
+		}
+
+		/*CONTACT*/
+
+		.containerCardContact {
+			background-color: white;
+			border-radius: 10px;
+			margin: 3rem;
+			padding: 5rem;
+			text-align:center;
+		}
+
+		input,
+		label,
+		textarea {
+			display: flex;
+			margin: 1rem 2rem;
+			font: 1rem 'palatino', sans-serif;
+			text-align:center;
+		}
+
+		/*FOOTER */
+		.footer {
+			background: white;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 1rem;
+		}
+		.img_footer {
+			width: 100px;
+			height: 100px;
+		}
+
+		.Adress {
+			font-weight: bold;
+			font-size: large;
+		}
+		.btn {
+			border-radius: 50%;
+			height: 100px;
+			width: 100px;
+			margin: 0.3rem;
+
+		}
+
+
+		/* media queries */
+		@media(min-width: 700px) {
+			header nav ul {
+				display: flex;
+				gap: 2rem;
+				align-items: center;
+				justify-content: flex-end;
+			}
+
+			header nav #burger {
+				display: none;
+			}
+
+</style>
+<div class="backgroundZebre">
+	<div class="header">
+		<nav class="container flex">
+			<img class="img_logo" src="/img/Logo Joffrine VF Couleur.jpg" alt="">
+			<img id="burger" src="./img/burger.svg" alt="">
+			<ul class="ul">
+				<li>A propos</li>
+				<li>Prix</li>
+				<li>Projets</li>
+				<li>Contact</li>
+			</ul>
+		</nav>
+	</div>
+	<div class=" ">
+		<div class="glassmorphisme containerTitle">
+			<h2>A propos</h2>
+		</div>
+		<div class="glassmorphisme containerCard">
+			<img class="img" src="/img/photoJoffrine.jpeg" alt="photo de Joffrine">
+			<div class="glassmorphisme containerArticle">
+				<p class="pApropos">Actuellement titulaire d'un Master Manager Marketing & Commercial Spécialité Stratégie (RNCP Niveau I) obtenu à l'École de Commerce ESG CI Paris , je suis actuellement à la recherche d'opportunités.
+					                    Précédemment Assistante Marketing au sein d'ENGIE (ex GDF SUEZ) à la CRAOP (Cellule de Réponses aux Appels d'Offres Publics) dans le cadre d'un contrat de professionnalisation, j'ai eu pour mission principale la Gestion d'une Base de Données Nationale relative à l'activité des Marchés Publics du groupe sur les secteurs Gaz et Electricité.
+					                    trouverez mon parcours disponible aux onglets "PORTFOLIO" et "CURRICULUM VITAE"
+					                    Si mon profil vous intéresse pour tous projets ou toutes offres d'emploi, veuillez utiliser l'onglet "CONTACT"
+					                    Les postes que je cible sont les suivants :
+					                        - Responsable Marketing
+					                        - Responsable Communication
+					                        - Chargée de Communication                                                                                                               
+					                        - Chef de Projet
+					                        - Chef de Produit
+					                        - Merchandiser
+					                        - Community Manager
+					                        - Category Manager
+					                        - Assistante Marketing
+					                        - Assistante Communication
+					                        - Assistante de Direction
+					                    Envisageant également de poursuivre mon cursus universitaire par un Doctorat, toutes pistes au sein d'un laboratoire de recherche sont suceptibles de m'intéresser.
+				</p>
+			</div>
+		</div>
+		<div>
+			<div class="glassmorphisme containerTitle">
+				<h2>Prix</h2>
+			</div>
+			<div class="containerPrix">
+				<div class="glassmorphisme containerCard">
+					<img class="img" src="/img/prix1.jpg" alt="logo du projet1">
+					<p class="pPrix">- Finaliste du Challenge de la Stratégie Marketing -<br>
+						NooZ Optics<br>
+						- Master Manager Marketing et Commercial-<br>
+						Spécialité Stratégie
+						<br>
+						- ESGCI -<br>2016
+					</p>
+				</div>
+				<div class="glassmorphisme containerCard">
+					<img class="imgPrix2" src="/img/prix2.jpeg" alt="logo du projet1">
+					<p class="pPrix">- Finaliste des Prix d'excellence 5ème année -<br>PMU<br>
+						- Master Manager Marketing et Commercial-<br>
+						Spécialité Stratégie
+						<br>
+						- ESGCI -<br>2016
+					</p>
+				</div>
+				<div class="glassmorphisme containerCard">
+					<img class="img" src="/img/prix3.jpeg" alt="logo du prix">
+					<p class="pPrix">- Finaliste du Projet Grand Symposium 4ème année-<br>Luxe & Développement Durable<br>
+						- WCPUN-<br>- Master Manager Marketing et Commercial-
+						<br>
+						- ESGCI -<br>2015
+					</p>
+				</div>
+				<div class="glassmorphisme containerCard">
+					<img class="imgPrix2" src="/img/prix4.webp" alt="logo du prix ">
+					<p class="pPrix">- Finaliste des Prix d'excellence 4ème année -<br>CSIAM<br>
+						- Master Manager Marketing et Commercial-<br>Projet Mission 50<br>
+						- ESGCI -<br>2015
+					</p>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div class="glassmorphisme containerTitle">
+				<h2>Projets</h2>
+			</div>
+			<div class="containerCardProjet">
+				<img class="imgProjet" src="/img/p1.jpeg" alt="">
+				<img class="imgProjet" src="/img/p2.jpeg" alt="">
+				<img class="imgProjet" src="/img/p3.jpeg" alt="">
+				<img class="imgProjet" src="/img/p4.jpeg" alt="">
+				<img class="imgProjet" src="/img/p5.jpeg" alt="">
+				<img class="imgProjet" src="/img/p6.jpeg" alt="">
+				<img class="imgProjet" src="/img/p7.jpeg" alt="">
+				<img class="imgProjet" src="/img/p8.jpeg" alt="">
+			</div>
+		</div>
+		<div>
+			<div class="glassmorphisme containerTitle">
+				<h2>Contact</h2>
+			</div>
+			<div class="containerCardContact">
+				
+                {{form(formulaire)}}
+
+			</div>
+            
+
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="footer">
+		<img class="img_footer" src="/img/Logo Joffrine VF Couleur.jpg" alt="">
+		<p class="Adress">Adresse:120 Route de Paris<br>76240 LE MENESNIL ESNARD<br></p>
+		<div class="liens">
+			<button class="btn"><i class="fa-brands fa-facebook"></i></button>
+			<button class="btn">Instagram</button>
+			<button class="btn">twitter</button>
+			<button class="btn">Linked</button>
+		</div>
+	</div>
+
+		<script>
+			constburger=document.querySelector(
+				'header nav #burger');
+			constnavList=document.querySelector(
+				'header nav ul')
+
+			burger.addEventListener(
+				'click', ()
+				=>{
+					if(
+						window.innerWidth<700)
+					{
+						navList.classList.add(
+							'navMobile');
+					}
+				}
+			);
+			navList.addEventListener(
+				'click', ()
+				=>{
+					if(
+						window.innerWidth<700)
+					{
+						navList.classList.remove(
+							'navMobile');
+					}
+				}
+			);
+		</script>
+	{% endblock %}
+
